@@ -1,6 +1,6 @@
 [submodule "FV3"]
   path = FV3
-  url = https://github.com/NOAA-EMC/fv3atm
+  url = https://github.com/NESII/fv3atm
   branch = develop
 [submodule "WW3"]
   path = WW3
@@ -30,6 +30,10 @@
   path = CICE-interface/CICE
   url = https://github.com/NOAA-EMC/CICE
   branch = develop
+[submodule "WRFHYDRO"]
+  path = WRFHYDRO
+  url = https://github.com/NCAR/wrf_hydro_nwm_public.git
+  branch = main
 [submodule "CDEPS"]
   path = CDEPS-interface/CDEPS
   url = https://github.com/NOAA-EMC/CDEPS
