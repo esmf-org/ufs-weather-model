@@ -30,6 +30,10 @@
   path = CICE-interface/CICE
   url = https://github.com/NOAA-EMC/CICE
   branch = emc/develop
+[submodule "WRFHYDRO"]
+  path = WRFHYDRO
+  url = https://github.com/NESII/wrf_hydro_nwm_public.git
+  branch = v5.2.x
 [submodule "CDEPS"]
   path = CDEPS-interface/CDEPS
   url = https://github.com/NOAA-EMC/CDEPS
