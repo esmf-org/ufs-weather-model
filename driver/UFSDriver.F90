@@ -85,6 +85,10 @@
 #ifdef FRONT_LIS
       use FRONT_LIS,        only: LIS_SS   => SetServices
 #endif
+  ! - Handle build time HYD options:
+#ifdef FRONT_WRFHYDRO
+      use FRONT_WRFHYDRO,   only: WRFHYDRO_SS  => SetServices
+#endif
   ! - Handle build time IPM options:
 #ifdef FRONT_IPE
       use FRONT_IPE,        only: IPE_SS   => SetServices
@@ -483,6 +487,14 @@
               return  ! bail out
             endif
             call NUOPC_DriverAddComp(driver, trim(prefix), LIS_SS, &
+              petList=petList, comp=comp, rc=rc)
+            if (ChkErr(rc,__LINE__,u_FILE_u)) return
+            found_comp = .true.
+          end if
+#endif
+#ifdef FRONT_WRFHYDRO
+          if (trim(model) == "wrfhydro") then
+            call NUOPC_DriverAddComp(driver, trim(prefix), WRFHYDRO_SS, &
               petList=petList, comp=comp, rc=rc)
             if (ChkErr(rc,__LINE__,u_FILE_u)) return
             found_comp = .true.
