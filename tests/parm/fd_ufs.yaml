@@ -812,7 +812,17 @@
        canonical_units: tbd
      - standard_name: inst_tracer_mass_frac
        canonical_units: 1
+     - standard_name: inst_total_soil_moisture_content
+       canonical_units: tbd
      - standard_name: inst_soil_moisture_content
+       canonical_units: tbd
+     - standard_name: inst_soil_temperature
+       canonical_units: tbd
+     - standard_name: time_step_infiltration_excess
+       canonical_units: tbd
+     - standard_name: soil_column_drainage
+       canonical_units: tbd
+     - standard_name: surface_water_depth
        canonical_units: tbd
      - standard_name: soil_type
        canonical_units: tbd
