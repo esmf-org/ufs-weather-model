@@ -1,6 +1,6 @@
 [submodule "FV3"]
   path = FV3
-  url = https://github.com/NESII/fv3atm
+  url = https://github.com/esmf-org/fv3atm
   branch = develop
 [submodule "WW3"]
   path = WW3
@@ -32,7 +32,7 @@
   branch = emc/develop
 [submodule "WRFHYDRO"]
   path = WRFHYDRO
-  url = https://github.com/NESII/wrf_hydro_nwm_public.git
+  url = https://github.com/esmf-org/wrf_hydro_nwm_public.git
   branch = v5.2.x
 [submodule "CDEPS"]
   path = CDEPS-interface/CDEPS
