@@ -32,8 +32,8 @@
   branch = emc/develop
 [submodule "WRFHYDRO"]
   path = WRFHYDRO
-  url = https://github.com/esmf-org/wrf_hydro_nwm_public.git
-  branch = v5.2.x
+  url = https://github.com/NCAR/wrf_hydro_nwm_public.git
+  branch = v5.3.0
 [submodule "CDEPS"]
   path = CDEPS-interface/CDEPS
   url = https://github.com/NOAA-EMC/CDEPS
