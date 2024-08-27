@@ -1,0 +1,4 @@
+# COPY WRF-HYDRO DOMAIN AND TABLE
+
+targetdir=.
+rsync -arv @[INPUTDATA_ROOT]/WRFHYDRO_input_data/rrfs_3km_hydro_300m/ ${targetdir}/DOMAIN

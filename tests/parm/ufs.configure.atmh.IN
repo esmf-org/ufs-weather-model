@@ -1,0 +1,30 @@
+#############################################
+####  UFS Run-Time Configuration File  ######
+#############################################
+
+# ESMF #
+logKindFlag:            @[esmf_logkind]
+globalResourceControl:  true
+
+# component list
+EARTH_component_list: ATM HYD
+
+# component models
+ATM_model: @[atm_model]
+HYD_model: @[hyd_model]
+
+# component petLists (wrt comp 480-495)
+ATM_petlist_bounds: @[atm_petlist_bounds]
+HYD_petlist_bounds: @[hyd_petlist_bounds]
+
+# run sequence
+runSeq::
+  @@[DT_ATMOS]
+#    HYD -> ATM :remapmethod=bilinear:zeroRegion=select:srcMaskValues=0
+    HYD -> ATM :remapmethod=nearest_stod:srcMaskValues=0:dstMaskValues=0:zeroRegion=select
+    ATM
+#    ATM -> HYD :remapmethod=bilinear:zeroRegion=select:srcMaskValues=0
+    ATM -> HYD :remapmethod=bilinear:extrapMethod=creep:extrapNumLevels=100:zeroRegion=select:srcMaskValues=0
+    HYD
+  @
+::

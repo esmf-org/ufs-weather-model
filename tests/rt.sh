@@ -961,7 +961,7 @@ case ${MACHINE_ID} in
     fi
 
     QUEUE="main"
-    COMPILE_QUEUE="main"
+    COMPILE_QUEUE="develop"
     PARTITION=
     dprefix=${dprefix:-"/glade/derecho/scratch"}
     DISKNM="/glade/derecho/scratch/epicufsrt/ufs-weather-model/RT/"

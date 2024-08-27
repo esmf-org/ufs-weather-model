@@ -546,6 +546,7 @@ export AQM=false
 export DO_AQM_CANOPY=.false.
 export aqm_rc_file=aqm.rc
 export FIRE_BEHAVIOR=false
+export WRFHYDRO=false
 export DATM_CDEPS=false
 export DOCN_CDEPS=false
 export DICE_CDEPS=false

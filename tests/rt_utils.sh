@@ -163,6 +163,12 @@ function compute_petbounds_and_tasks_esmf_threading() {
      n=$((n + ATM_compute_tasks*atm_omp_num_threads + ATM_io_tasks*atm_omp_num_threads))
   fi
 
+  # HYD
+  if [[ ${HYD_tasks:-0} -gt 0 ]]; then
+     hyd_petlist_bounds="${n} $((n + HYD_tasks - 1))"
+     n=$((n + HYD_tasks))
+  fi
+
   # OCN
   if [[ ${OCN_tasks:-0} -gt 0 ]]; then
      OCN_tasks=$((OCN_tasks * ocn_omp_num_threads))
@@ -223,6 +229,7 @@ function compute_petbounds_and_tasks_esmf_threading() {
     echo "AQM_petlist_bounds: ${aqm_petlist_bounds:-}"
     echo "LND_petlist_bounds: ${lnd_petlist_bounds:-}"
     echo "FBH_petlist_bounds: ${fbh_petlist_bounds:-}"
+    echo "HYD_petlist_bounds: ${hyd_petlist_bounds:-}"
     echo "UFS_tasks         : ${UFS_tasks:-}"
   fi
 

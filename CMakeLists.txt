@@ -266,7 +266,7 @@ endif()
 ###############################################################################
 if(WRFHYDRO OR NWM)
   # Location
-  set(WRFHYDRO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/WRFHYDRO/trunk/NDHMS)
+  set(WRFHYDRO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/WRFHYDRO)
   # Default Settings
   set(ENV{WRF_HYDRO} 1)
   set(ENV{WRF_HYDRO_NUOPC} 1)
@@ -358,7 +358,7 @@ endif()
 if(WRFHYDRO OR NWM)
   add_dependencies(ufs wrfhydro_nuopc)
   list(APPEND _ufs_defs_private FRONT_WRFHYDRO=WRFHydro_NUOPC)
-  target_include_directories(ufs PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/WRFHYDRO/trunk/NDHMS/mods)
+  target_include_directories(ufs PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/WRFHYDRO/mods)
   list(APPEND _ufs_libs_public wrfhydro_nuopc)
 endif()
 

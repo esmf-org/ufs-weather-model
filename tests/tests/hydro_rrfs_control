@@ -1,0 +1,52 @@
+###############################################################################
+#
+#  RRFS_v1 physics with Hydro, control
+#
+###############################################################################
+
+# This configuration is supposed to match the rrfs_dev1 parallel, so
+# do not change the namelist without checking the current parallel.
+
+export TEST_DESCR="RRFS physics with Hydro, control"
+
+export CNTL_DIR=hydro_rrfs_control
+
+export LIST_FILES="sfcf000.nc \
+                   sfcf002.nc \
+                   atmf000.nc \
+                   atmf002.nc \
+                   202103220700.CHRTOUT_DOMAIN1 \
+                   202103220700.GWOUT_DOMAIN1 \
+                   202103220700.RTOUT_DOMAIN1 \
+                   202103220800.CHRTOUT_DOMAIN1 \
+                   202103220800.GWOUT_DOMAIN1 \
+                   202103220800.RTOUT_DOMAIN1 \
+                   HYDRO_RST.2021-03-22_08:00_DOMAIN1"
+
+export WRFHYDRO=true
+export_rrfs_v1
+export FV3_RUN="${FV3_RUN} hydro_run.IN"
+
+# export RESTART_INTERVAL="0 -1"
+export OUTPUT_FH='0 2'
+
+export QUILTING=.true.
+export QUILTING_RESTART=.true.
+export USE_MERRA2=.true.
+export UFS_CONFIGURE=ufs.configure.atmh.IN
+
+export hyd_model=wrfhydro
+export HYD_tasks=240
+export HYD_DTRT_TER=20
+export HYD_DTRT_CH=300
+export HYD_DXRT=300
+export HYD_AGGFACTRT=10
+export HYD_RSTDT=120
+export HYD_OUTDT=60
+
+export WLCLK=30
+export FHMAX=2
+
+if [[ " hera orion hercules jet " =~ " ${MACHINE_ID} " ]] ; then
+  ZSTANDARD_LEVEL=5
+fi

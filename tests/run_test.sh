@@ -435,6 +435,13 @@ if [[ "${JOB_SHOULD_FAIL:-NO}" == WHEN_COPYING ]] ; then
     false
 fi
 
+# HYDRO
+if [[ $WRFHYDRO = 'true' ]]; then
+  atparse < "${PATHRT}/parm/hydro/hydro.namelist.IN" > hydro.namelist
+  atparse < "${PATHRT}/parm/hydro/namelist.hrldas.IN" > namelist.hrldas
+  cp ${PATHRT}/parm/hydro/*TBL .
+fi
+
 ################################################################################
 # Submit test job
 ################################################################################
