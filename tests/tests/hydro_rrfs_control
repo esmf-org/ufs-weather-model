@@ -23,8 +23,8 @@ export LIST_FILES="sfcf000.nc \
                    202103220800.RTOUT_DOMAIN1 \
                    HYDRO_RST.2021-03-22_08:00_DOMAIN1"
 
-export WRFHYDRO=true
 export_rrfs_v1
+export WRFHYDRO=true
 export FV3_RUN="${FV3_RUN} hydro_run.IN"
 
 # export RESTART_INTERVAL="0 -1"
